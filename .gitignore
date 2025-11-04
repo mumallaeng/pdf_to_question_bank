@@ -1,2 +1,28 @@
 # macOS system files to ignore
 .DS_Store
+
+# Python virtual environment
+venv/
+env/
+ENV/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+
+# Generated output folders
+sample/PDF_to_Question_Bank_Sample/
+sample/PDF_to_Question_Bank_Sample_Answers_Explanations/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
