@@ -3,6 +3,9 @@
 
 set -e  # Exit on error
 
+# Run from the repository root regardless of invocation location
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
 # Check if virtual environment exists
 if [ ! -d "venv" ]; then
     echo "Error: Virtual environment not found!"

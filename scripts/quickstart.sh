@@ -3,6 +3,9 @@
 
 set -e  # Exit on error
 
+# Run from the repository root regardless of invocation location
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
 echo "=========================================="
 echo "PDF to Question Bank Converter"
 echo "Quick Start"
@@ -12,10 +15,10 @@ echo ""
 # Run setup if venv doesn't exist
 if [ ! -d "venv" ]; then
     echo "Setting up for the first time..."
-    ./setup.sh
+    ./scripts/setup.sh
 else
     echo "Virtual environment found. Skipping setup."
-    echo "To reinstall dependencies, run: ./setup.sh"
+    echo "To reinstall dependencies, run: ./scripts/setup.sh"
     echo ""
 fi
 
@@ -31,4 +34,4 @@ if [ $# -eq 0 ]; then
 fi
 
 # Run the program
-./run.sh "$@"
+./scripts/run.sh "$@"

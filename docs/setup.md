@@ -20,7 +20,7 @@ sudo apt-get install poppler-utils
 
 ```bash
 # 가상환경 생성 및 패키지 설치
-./setup.sh
+./scripts/setup.sh
 ```
 
 setup.sh 스크립트는:
@@ -56,11 +56,11 @@ pdf2qb sample --columns 3
 
 ```bash
 # 가상환경에서 실행
-./run.sh <PDF_폴더_경로>
+./scripts/run.sh <PDF_폴더_경로>
 
 # 예시
-./run.sh sample
-./run.sh sample --columns 3
+./scripts/run.sh sample
+./scripts/run.sh sample --columns 3
 ```
 
 ### 방법 3: Python 직접 실행
@@ -87,7 +87,7 @@ pdf2qb sample
 pdf2qb sample --columns 3
 
 # 또는 쉘 스크립트 사용
-./run.sh sample --columns 3
+./scripts/run.sh sample --columns 3
 ```
 
 ## 출력 형식
@@ -116,15 +116,23 @@ pdf_to_question_bank/
 ├── pdf2qb.py                     # 메인 Python 스크립트
 ├── setup.py                      # 패키지 설치 스크립트
 ├── requirements.txt              # Python 패키지 의존성
-├── setup.sh                      # 가상환경 설정 스크립트
-├── run.sh                        # 실행 스크립트
-├── quickstart.sh                 # 빠른 시작 스크립트
+├── scripts/
+│   ├── setup.sh                  # 가상환경 설정 스크립트
+│   ├── run.sh                    # 실행 스크립트
+│   └── quickstart.sh             # 빠른 시작 스크립트
+├── docs/
+│   └── setup.md                  # 상세 설치/사용 문서 (이 문서)
+├── notebooks/
+│   └── pdf2question_bank.ipynb   # 개발용 노트북
+├── assets/
+│   └── patterns/white_image.png
 ├── venv/                         # Python 가상환경 (자동 생성)
 ├── sample/                       # 샘플 PDF 파일
 │   ├── *.pdf                     # PDF 파일들
 │   └── [PDF_파일명]/             # 생성된 문제 이미지들
 │       └── page_*_C*B*.png
-└── README.md
+├── README.md                     # English
+└── README.ko.md                  # 한국어
 ```
 
 ## 테스트
@@ -132,10 +140,10 @@ pdf_to_question_bank/
 샘플 PDF 파일로 테스트:
 
 ```bash
-./quickstart.sh sample/
+./scripts/quickstart.sh sample/
 
 # 또는
-./quickstart.sh {your_folder_path} --columns 3
+./scripts/quickstart.sh {your_folder_path} --columns 3
 ```
 
 성공적으로 실행되면 지정한 폴더 내에 각 PDF 파일명과 동일한 폴더가 생성되고, 그 안에 개별 문제 이미지들이 저장됩니다.

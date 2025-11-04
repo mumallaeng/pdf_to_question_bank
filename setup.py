@@ -14,11 +14,11 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="pdf2qb",
     version="1.0.0",
-    author="yonmilk",
+    author="mumallaeng",
     description="Convert PDF question banks to individual question images",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yonmilk/pdf_to_question_bank",
+    url="https://github.com/mumallaeng/pdf_to_question_bank",
     py_modules=["pdf2qb"],
     classifiers=[
         "Development Status :: 4 - Beta",

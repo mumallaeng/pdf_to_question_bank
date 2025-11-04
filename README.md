@@ -1,36 +1,38 @@
+English | [한국어](README.ko.md)
+
 # PDF to Question Bank Converter
 
-PDF 파일에서 개별 문제 이미지를 추출하는 도구입니다. PDF 페이지를 열(column)로 분할하고, 각 열에서 공백을 기준으로 개별 문제를 분리하여 이미지 파일로 저장합니다.
-anki와 같은 플래시카드에서 문제 은행을 쉽게 생성하고자 만들었습니다.
+A tool that extracts individual question images from PDF files. It splits each PDF page into columns, then separates individual questions within each column based on whitespace and saves them as image files.
+Built to make it easy to create flashcard question banks for tools like Anki.
 
-## 빠른 시작
+## Quick Start
 
-### 방법 1: pdf2qb 명령어 사용 (추천)
+### Method 1: Using the `pdf2qb` command (recommended)
 
 ```bash
-# 설정 (최초 1회)
-./setup.sh
+# One-time setup
+./scripts/setup.sh
 
-# 가상환경 활성화 후 사용
+# Activate the virtual environment, then use
 source venv/bin/activate
 pdf2qb sample
 pdf2qb sample --columns 3
 ```
 
-### 방법 2: 쉘 스크립트 사용
+### Method 2: Using shell scripts
 
 ```bash
-# 한 번에 설정 및 실행
-./quickstart.sh sample
+# Setup and run in one command
+./scripts/quickstart.sh sample
 
-# 3열로 분할
-./quickstart.sh sample --columns 3
+# Split into 3 columns
+./scripts/quickstart.sh sample --columns 3
 ```
 
-첫 실행 시 자동으로 가상환경을 생성하고 필요한 패키지를 설치합니다.
-그외의 사용 방법은 [setup](setup.md)를 참고해주세요.
+On first run, it automatically creates a virtual environment and installs the required packages.
+For other usage methods, see [setup](docs/setup.md).
 
-## 미리보기 및 사용 예시
+## Preview and Usage Example
 
 
 
@@ -39,21 +41,21 @@ pdf2qb sample --columns 3
 <tr>
 <td>
 
-지정한 경로에 pdf 파일을 넣고 스크립트 실행
+Place your PDF files in the specified path and run the script
 
 <img alt="preview_1" src="https://github.com/user-attachments/assets/ba8eb71b-9554-48fa-a9b4-dc8d7d52c6e1" />
 </td>
 <td>
 
-결과물: 개별 문제 이미지가 추출되어 저장됨
+Result: individual question images are extracted and saved
 
 <img alt="preview_2" src="https://github.com/user-attachments/assets/19c08be1-8ddb-4a3b-850e-a96e1e53f999" />
 </td>
 </tr>
 <tr>
 <td>
-사용예시: <br/>
-추출된 이미지 파일을 anki에 임포트하여 문제 은행 생성
+Usage example: <br/>
+Import the extracted image files into Anki to build a question bank
     <img alt="preview_3" src="https://github.com/user-attachments/assets/8728a109-4f00-4aac-9211-61db7b857355" />
 </td>
 <td>
@@ -67,15 +69,17 @@ pdf2qb sample --columns 3
 <br/><br/><br/>
 
 
-# 개선 필요 기능
+# Planned Improvements
 
-- [ ] 문제나 답안이 아닌 제목이나 페이지 번호 등의 불필요한 이미지도 함께 추출되는 문제
-- [ ] 흰색 배경이 아닌 문제 이미지도 처리 가능하도록 개선 필요
-- [ ] 문제.pdf와 답안.pdf를 기반으로 문제 번호별로 매칭된 CSV(`번호,문제경로,답안경로`) 파일을 출력하는 기능 추가
-- [ ] anki 덱 파일(.apkg)로 바로 변환하는 기능 추가
+- Titles, page numbers, and other non-question/answer images are sometimes extracted along with actual content
+- Improve handling of question images that don't have a white background
+- Add a feature to output a CSV (`number,question_path,answer_path`) that matches question and answer PDFs by question number
+- Add direct conversion to an Anki deck file (.apkg)
 
 <br/><br/><br/>
 
 ---
 
-**라이선스**
+**License**
+
+[MIT](LICENSE)
